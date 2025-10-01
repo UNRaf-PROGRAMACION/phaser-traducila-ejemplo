@@ -5,7 +5,7 @@ let translations = null;
 let language = ES;
 
 export async function getTranslations(lang, callback) {
-  localStorage.clear();
+  localStorage.setItem("translations", null);
   translations = null;
   language = lang;
   if (language === ES) {
