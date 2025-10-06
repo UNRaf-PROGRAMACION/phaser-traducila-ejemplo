@@ -19,6 +19,9 @@ const phasermsg = () => {
 export default defineConfig({
     base: './',
     logLevel: 'warn',
+    define: {
+        'import.meta.env.MODE': JSON.stringify(process.env.MODE || 'arcade')
+    },
     build: {
         rollupOptions: {
             output: {
