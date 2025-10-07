@@ -21,9 +21,9 @@ This template has been updated for:
 
 This project supports environment variables to control the application mode.
 
-### MODE Variable
+### VITE_MODE Variable
 
-The `MODE` environment variable controls whether the application can make external API calls to Traducila:
+The `VITE_MODE` environment variable controls whether the application can make external API calls to Traducila:
 
 - `arcade` (default): Disables external fetch requests to Traducila API
 - `production`: Enables all external API calls
@@ -35,28 +35,13 @@ The `MODE` environment variable controls whether the application can make extern
    cp .env.example .env
    ```
 
-2. Configure the `MODE` variable in your `.env` file:
+2. Configure the `VITE_MODE` variable in your `.env` file:
    ```
-   MODE=arcade    # For arcade mode (no external API calls)
-   MODE=production # For production mode (enables API calls)
-   ```
-
-3. Before building, set the environment variable:
-
-   **Windows (CMD):**
-   ```bash
-   set MODE=arcade && npm run build
+   VITE_MODE=arcade    # For arcade mode (no external API calls)
+   VITE_MODE=production # For production mode (enables API calls)
    ```
 
-   **Windows (PowerShell):**
-   ```powershell
-   $env:MODE="arcade"; npm run build
-   ```
-
-   **Linux/Mac:**
-   ```bash
-   MODE=arcade npm run build
-   ```
+3. The environment variable will be automatically loaded from the `.env` file when running `npm run dev` or `npm run build`.
 
 ## Available Commands
 
