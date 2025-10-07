@@ -17,6 +17,47 @@ This template has been updated for:
 
 [Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
 
+## Environment Configuration
+
+This project supports environment variables to control the application mode.
+
+### MODE Variable
+
+The `MODE` environment variable controls whether the application can make external API calls to Traducila:
+
+- `arcade` (default): Disables external fetch requests to Traducila API
+- `production`: Enables all external API calls
+
+#### Setup
+
+1. Copy the `.env.example` file to create your own `.env` file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Configure the `MODE` variable in your `.env` file:
+   ```
+   MODE=arcade    # For arcade mode (no external API calls)
+   MODE=production # For production mode (enables API calls)
+   ```
+
+3. Before building, set the environment variable:
+
+   **Windows (CMD):**
+   ```bash
+   set MODE=arcade && npm run build
+   ```
+
+   **Windows (PowerShell):**
+   ```powershell
+   $env:MODE="arcade"; npm run build
+   ```
+
+   **Linux/Mac:**
+   ```bash
+   MODE=arcade npm run build
+   ```
+
 ## Available Commands
 
 | Command | Description |
