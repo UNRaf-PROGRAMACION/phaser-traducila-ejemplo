@@ -110,6 +110,9 @@ export default class InitialMenu extends Phaser.Scene {
         color: "#ffffff",
       }
     );
+    this.testDeploy = this.add.text(width * 0.5, height * 0.6, "Test Deploy", {
+      color: "#ffffff",
+    });
   }
 
   update() {
